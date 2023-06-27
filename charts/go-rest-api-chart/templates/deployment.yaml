@@ -4,6 +4,7 @@ metadata:
   name: {{ include "go-rest-api-chart.fullname" . }}
   labels:
     {{- include "go-rest-api-chart.labels" . | nindent 4 }}
+  namespace: 
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
